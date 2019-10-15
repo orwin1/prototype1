@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+        <title>Quizz</title>
+        <link rel="stylesheet" href="jquery.mobile-1.4.5.css">
+    	<script src="jquery.js"></script>
+    	<script src="jquery.mobile-1.4.5.js"></script>
+    </head>
+    <body>
+        <script type="text/javascript" src="cordova.js"></script>
+
+        <div data-role="page" id="homepage">
+        <div data-role="header">
+            <h1>Quizz</h1>
+        </div>
+
+        <div data-role="navbar">
+            <ul>
+                <li><a href="#homepage" class="ui-btn-active ui-state-persist" data-icon="home">Home</a></li>
+                <li><a href="#quizz" data-icon="grid">Quizz</a></li>
+                <li><a href="#help3" data-icon="info">Help</a></li>
+
+            </ul>
+        </div>
+
+        <div data-role="main" id="homepage" class="ui-content">
+            <p>This is a quizz for to test critical thinking</p>
+        </div>
+
+
+        <div data-role="footer">
+            <h1>Quizz</h1>
+        </div>
+    </div>
+
+
+
+
+
+
+    <div data-role="page" id="quizz">
+        <div data-role="header">
+            <h1>Quizz</h1>
+        </div>
+
+        <div data-role="navbar">
+            <ul>
+                <li><a href="#homepage" data-icon="home">Home</a></li>
+                <li><a href="#quizz" class="ui-btn-active ui-state-persist" data-icon="grid">Quizz</a></li>
+                <li><a href="#help3" data-icon="info">Help</a></li>
+
+            </ul>
+        </div>
+
+        <div data-role="main" id="homepage" class="ui-content">
+        </div>
+
+        <p>What is the capital of Mauritius?</p>
+        <form>
+            <fieldset class="ui-field-contain">
+                <select name="day" id="day">
+                <option value="a"> Port-Louis </option>
+                <option value="b"> Curepipe </option>
+                <option value="c"> Mahebourg </option>
+                <option value="d"> Beau-Bassin </option>
+                </select>
+                </fieldset>
+            </form>
+
+        <div>
+            <a href="#answer1" onclick="myfunction();" class="ui-btn">Validate</a>
+        </div>
+
+        <div data-role="footer">
+            <h1>Quizz</h1>
+        </div>
+    </div>
+
+
+
+        <div data-role="page" data-dialog="true" id="answer1">
+        
+        <div data-role="main" id="answer" class="ui-content">
+            
+        </div>
+        <p><h5 id="result1"></h5></p>
+        <p><h5 id="correct1"></h5></p>
+        <a href="#question2" class="ui-btn ">Next</a>
+    </div>
+
+
+    <div data-role="page" id="question2">
+        <div data-role="header">
+            <h1>Quizz</h1>
+        </div>
+
+        <div data-role="navbar">
+            <ul>
+                <li><a href="#homepage" data-icon="home">Home</a></li>
+                <li><a href="#quizz" class="ui-btn-active ui-state-persist" data-icon="grid">Quizz</a></li>
+                <li><a href="#help3" data-icon="info">Help</a></li>
+
+            </ul>
+        </div>
+
+        <div data-role="main" id="homepage" class="ui-content">
+        </div>
+
+        <p>Question2?</p>
+        <form>
+            <fieldset class="ui-field-contain">
+                <select name="day1" id="day1">
+                <option value="a1"> answer1</option>
+                <option value="b1"> answer2 </option>
+                <option value="c1"> answer3 </option>
+                <option value="d1"> answer4 </option>
+                </select>
+                </fieldset>
+            </form>
+
+        <div>
+            <a href="#answer2" onclick="myfunction1();" class="ui-btn">Validate</a>
+        </div>
+
+        <div data-role="footer">
+            <h1>Quizz</h1>
+        </div>
+    </div>
+
+
+
+        <div data-role="page" data-dialog="true" id="answer2">
+        
+        <div data-role="main" id="answer" class="ui-content">
+            
+        </div>
+        <p><h5 id="result2"></h5></p>
+        <p><h5 id="correct2"></h5></p>
+        <a href="#question3" class="ui-btn ">Next</a>
+    </div>
+
+    
+
+        
+
+    <div data-role="page" id="help3">
+        <div data-role="header">
+            <h1>Quizz</h1>
+        </div>
+
+        <div data-role="navbar">
+            <ul>
+                <li><a href="#homepage" data-icon="home">Home</a></li>
+                <li><a href="#quizz" data-icon="grid">Quizz</a></li>
+                <li><a href="#help3" class="ui-btn-active ui-state-persist" data-icon="info">Help</a></li>
+
+            </ul>
+        </div>
+
+        <div data-role="main" id="homepage" class="ui-content">
+            <p>This is the help section and provides basic information about how to use the quizz</p>
+        </div>
+
+
+        <a href="#dialoginfo" class="ui-btn ui-icon-info ui-btn-icon-left ">More Info</a>
+
+        <div data-role="footer">
+            <h1>Quizz</h1>
+        </div>
+
+    </div>
+
+
+
+    <div data-role="page" data-dialog="true" id="dialoginfo">
+        <div data-role="header" >
+            <h1>More Info</h1>
+        </div>
+        <div data-role="main" id="info" class="ui-content">
+            <p>You have requested more information about the App!</p>
+        </div>
+        <a href="#help3" class="ui-btn ui-btn ui-icon-back ui-btn-icon-left" data-rel="back">Dismiss</a>
+    </div>
+
+    <script>
+function myfunction(){
+var answer =document.getElementById("day").value;
+if (answer=="a"){
+var result = "The answer is correct";
+var right = ""; 
+}
+else if (answer=="b"){
+var result = "The answer is wrong";
+var right = "The correct answer is Port-Louis";
+}
+else if (answer=="c"){
+var result = "The answer is wrong";
+var right = "The correct answer is Port-Louis";
+}
+else if (answer=="d"){
+var result = "The answer is wrong";
+var right = "The correct answer is Port-Louis";
+}
+document.getElementById("result1").innerHTML = result ;
+document.getElementById("correct1").innerHTML = right; 
+}
+
+
+function myfunction1(){
+var answer =document.getElementById("day1").value;
+if (answer=="a1"){
+var result = "The answer is correct";
+var right = ""; 
+}
+else if (answer=="b1"){
+var result = "The answer is wrong";
+var right = "The correct answer is answer1";
+}
+else if (answer=="c1"){
+var result = "The answer is wrong";
+var right = "The correct answer is answer1";
+}
+else if (answer=="d1"){
+var result = "The answer is wrong";
+var right = "The correct answer is answer1";
+}
+document.getElementById("result2").innerHTML = result ; 
+document.getElementById("correct2").innerHTML = right;
+}
+
+</script>
+    </body>
+</html>
